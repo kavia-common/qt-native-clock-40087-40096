@@ -5,9 +5,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
@@ -20,9 +21,13 @@ set(HEADERS
     include/mainApp.h
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+set(RESOURCES
+    resources/app.qrc
+)
 
-target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::Widgets)
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} ${RESOURCES})
+
+target_link_libraries(${PROJECT_NAME} Qt6::Core Qt6::Widgets Qt6::Gui)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}

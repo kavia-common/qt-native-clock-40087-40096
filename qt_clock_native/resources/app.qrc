@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <!-- Placeholder for fonts or icons if added later -->
+        <!-- Example:
+        <file>fonts/Segment7.ttf</file>
+        -->
+    </qresource>
+</RCC>
