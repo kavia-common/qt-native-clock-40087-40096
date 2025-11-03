@@ -1,0 +1,4 @@
+{
+    "command": "cmake --build build && DISPLAY=:99  cmake --build build --target run ",
+    "working_directory": "/home/kavia/workspace/code-generation/qt-native-clock-40087-40096/qt_clock_native"
+}
